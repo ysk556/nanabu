@@ -9,21 +9,11 @@
     <body class="container">
         <h1>Hello!</h1>
         <p><script>
-            var N = 1103;
-            var num = 2;
-            var result = true;
-            while(num < N){
-                if (N % num == 0){
-                    result = false;
-                    break;
-                }
-                num ++;
+            function hello(name){
+                document.write("Hello. " + name + "!<br>");
             }
-            if (result){
-                document.write(N + "は、素数です。");
-            } else {
-                document.write(N + "は、素数じゃないです。");
-            }
+            hello("Taro");
+            hello("Hanako");
         </script></p>
     </body>
 </html>
