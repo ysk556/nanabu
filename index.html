@@ -9,11 +9,15 @@
     <body class="container">
         <h1>Hello!</h1>
         <p><script>
-            function hello(name){
-                document.write("Hello. " + name + "!<br>");
+            function calc(n) {
+                var total = 0;
+                for (var i = 1;i <= n;i++){
+                    total += i;
+                }
+                return total;
             }
-            hello("Taro");
-            hello("Hanako");
+            var num = 100;
+            document.write(num + 'までの合計は、' + calc(num) + 'です。');
         </script></p>
     </body>
 </html>
