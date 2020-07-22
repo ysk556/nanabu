@@ -9,15 +9,12 @@
     <body class="container">
         <h1>Hello!</h1>
         <p><script>
-            function calc(n) {
-                var total = 0;
-                for (var i = 1;i <= n;i++){
-                    total += i;
-                }
-                return total;
+            var arr = [98,76,57,69,85];
+            var total = 0;
+            for(var i = 0; i < 5; i++) {
+                total += arr[i];
             }
-            var num = 100;
-            document.write(num + 'までの合計は、' + calc(num) + 'です。');
+            document.write('合計は、' + total + '、平均は' + total / 5 + 'です。');
         </script></p>
     </body>
 </html>
