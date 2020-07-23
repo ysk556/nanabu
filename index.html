@@ -9,33 +9,13 @@
 
 <body class="container">
     <h1>Hello!</h1>
-    <p>
-        <script>
-            class Keisan {
-                constructor(data) {
-                    this.data = data;
-                }
-                calc() {
-                    var total = 0;
-                    for (var n in this.data) {
-                        total += this.data[n];
-                    }
-                    return total;
-                }
-                report() {
-                    document.write('<div class="alert alert-info">');
-                    document.write('Data: ' + this.data + '<br>');
-                    document.write('total: ' + this.calc());
-                    document.write('</div>');
-                }
-            }
-
-            var k1 = new Keisan([12, 34, 56, 78, 90]);
-            k1.report();
-            var k2 = new Keisan([109, 87, 65, 43, 21]);
-            k2.report();
-        </script>
-    </p>
+    <p id="msg">wait...</p>
+    <script>
+        var p = document.querySelector('#msg');
+        setTimeout(function () {
+            p.textContent = 'これがDOM操作の威力だ！';
+        }, 3000);
+    </script>
 </body>
 
 </html>
