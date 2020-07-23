@@ -1,33 +1,34 @@
 <!DOCTYPE html>
 <html lang="ja">
-    <head>
-        <meta charset="UTF-8">
-        <title>Hello!</title>
-        <link rel="stylesheet"
-        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.css">
-    </head>
-    <body class="container">
-        <h1>Hello!</h1>
-        <p><script>
-            var keisan = {};
-            keisan.data = [0];
-            keisan.calc = function(){
-                var total = 0;
-                for(var n in this.data){
-                    total += this.data[n];
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hello!</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.css">
+</head>
+
+<body class="container">
+    <h1>Hello!</h1>
+    <p>
+        <script>
+            var keisan = {
+                data: [123, 45, 67, 89, 10],
+                calc: function () {
+                    var total = 0;
+                    for (var n in this.data) {
+                        total += this.data[n];
+                    }
+                    return total;
+                },
+                report: function () {
+                    document.write('Data: ' + this.data + '<br>');
+                    document.write('Total: ' + this.calc() + '<br>');
                 }
-                return total;
-            }
-            keisan['report'] = function(){
-                document.write('Data: ' + this.data + '<br>');
-                document.write('Total: ' + this.calc() + '<br>');
             }
 
-            keisan.data = [123, 45, 67, 89, 10];
             keisan.report();
-            document.write(keisan + '<br>');
-            document.write(keisan['data'] + '<br>');
-            document.write(keisan['calc'] + '<br>');
-        </script></p>
-    </body>
+        </script>
+    </p>
+</body>
+
 </html>
