@@ -10,21 +10,21 @@
         <h1>Hello!</h1>
         <p><script>
             var keisan = {};
-            keisan['data'] = [0];
-            keisan['calc'] = function(){
+            keisan.data = [0];
+            keisan.calc = function(){
                 var total = 0;
-                for(var n in keisan['data']){
-                    total += keisan['data'][n];
+                for(var n in this.data){
+                    total += this.data[n];
                 }
                 return total;
             }
             keisan['report'] = function(){
-                document.write('Data: ' + keisan['data'] + '<br>');
-                document.write('Total: ' + keisan['calc']() + '<br>');
+                document.write('Data: ' + this.data + '<br>');
+                document.write('Total: ' + this.calc() + '<br>');
             }
 
-            keisan['data'] = [123, 45, 67, 89, 10];
-            keisan['report']();
+            keisan.data = [123, 45, 67, 89, 10];
+            keisan.report();
             document.write(keisan + '<br>');
             document.write(keisan['data'] + '<br>');
             document.write(keisan['calc'] + '<br>');
