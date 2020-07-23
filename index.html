@@ -9,13 +9,25 @@
     <body class="container">
         <h1>Hello!</h1>
         <p><script>
-            var arr = {'国語':98,'算数':76,'英語':57,'理科':69,'社会':85};
-            var total = 0;
-            for(var key in arr) {
-                total += arr[key];
-                document.write(key + '：' + arr[key] + '<br>');
+            var keisan = {};
+            keisan['data'] = [0];
+            keisan['calc'] = function(){
+                var total = 0;
+                for(var n in keisan['data']){
+                    total += keisan['data'][n];
+                }
+                return total;
             }
-            document.write('<p>合計は、' + total + '、平均は' + total / 5 + 'です。</p>');
+            keisan['report'] = function(){
+                document.write('Data: ' + keisan['data'] + '<br>');
+                document.write('Total: ' + keisan['calc']() + '<br>');
+            }
+
+            keisan['data'] = [123, 45, 67, 89, 10];
+            keisan['report']();
+            document.write(keisan + '<br>');
+            document.write(keisan['data'] + '<br>');
+            document.write(keisan['calc'] + '<br>');
         </script></p>
     </body>
 </html>
