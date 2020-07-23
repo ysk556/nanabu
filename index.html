@@ -11,22 +11,29 @@
     <h1>Hello!</h1>
     <p>
         <script>
-            var keisan = {
-                data: [123, 45, 67, 89, 10],
-                calc: function () {
+            class Keisan {
+                constructor(data) {
+                    this.data = data;
+                }
+                calc() {
                     var total = 0;
                     for (var n in this.data) {
                         total += this.data[n];
                     }
                     return total;
-                },
-                report: function () {
+                }
+                report() {
+                    document.write('<div class="alert alert-info">');
                     document.write('Data: ' + this.data + '<br>');
-                    document.write('Total: ' + this.calc() + '<br>');
+                    document.write('total: ' + this.calc());
+                    document.write('</div>');
                 }
             }
 
-            keisan.report();
+            var k1 = new Keisan([12, 34, 56, 78, 90]);
+            k1.report();
+            var k2 = new Keisan([109, 87, 65, 43, 21]);
+            k2.report();
         </script>
     </p>
 </body>
