@@ -9,12 +9,13 @@
     <body class="container">
         <h1>Hello!</h1>
         <p><script>
-            var arr = [98,76,57,69,85];
+            var arr = {'国語':98,'算数':76,'英語':57,'理科':69,'社会':85};
             var total = 0;
-            for(var i in arr) {
-                total += arr[i];
+            for(var key in arr) {
+                total += arr[key];
+                document.write(key + '：' + arr[key] + '<br>');
             }
-            document.write('合計は、' + total + '、平均は' + total / 5 + 'です。');
+            document.write('<p>合計は、' + total + '、平均は' + total / 5 + 'です。</p>');
         </script></p>
     </body>
 </html>
