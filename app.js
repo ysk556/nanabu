@@ -1,12 +1,25 @@
-const gl = require("./getline.js");
+var data = {
+  Tokyo: 1230,
+  Osaka: 987,
+  NewYork: 456
+};
+console.table(data);
 
-const readline = require('readline');
-
-async function main() {
-  while (true) {
-    var re = await gl.getline('input: ');
-    console.log('(' + re.length + ' chars)');
+var data2 = {
+  Windows: {
+    Tokyo: 1230,
+    Osaka: 987,
+    NewYork: 456
+  },
+  macOS: {
+    Tokyo: 543,
+    Osaka: 210,
+    NewYork: 789
+  },
+  Linux: {
+    Tokyo: 98,
+    Osaka: 76,
+    NewYork: 54
   }
-}
-
-main();
+};
+console.table(data2);
