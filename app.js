@@ -1,12 +1,17 @@
-const readline = require("readline");
+const gl = require("./getline.js");
 
-const read = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
-});
-
-function answer(answer) {
-  read.write("you typed:" + answer);
+// メイン処理
+async function main() {
+  console.log(('--begin--'));
+  while (true) {
+    var result = await gl.getline('type any words: ');
+    if (result == '') {
+      break;
+    }
+    console.log('you typed: ' + result);
+  }
+  console.log('--end--');
 }
 
-read.question("type any words: ", answer);
+// メイン処理を実行
+main();
