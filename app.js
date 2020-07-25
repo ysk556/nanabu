@@ -1,19 +1,11 @@
-console.time('test');
+const readline = require('readline');
 
-var result = [];
-for (let i = 2; i < 1000; i++) {
-    var num = 2;
-    var flg = true;
-    while (num < i) {
-        if (i % num == 0) {
-            flg = false;
-            break;
-        }
-        num++;
-    }
-    if (flg) {
-        result.push(i);
-    }
-}
-console.log(result);
-console.timeEnd('test');
+const read = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+read.question('type any words: ', (answer) => {
+    read.write("you typed:" + answer);
+    read.close();
+});
