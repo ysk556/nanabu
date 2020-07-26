@@ -1,16 +1,9 @@
 const fs = require('fs');
-
-function getFile(fname) {
-  return new Promise((resolve, reject) => {
-    fs.readFile(fname, (err, data) => {
-      resolve(data);
-    });
-  });
-}
+const r1 = require('./getline.js');
 
 async function main() {
-  var data = await getFile('./index.html');
-  console.log(data.toString());
+  let msg = await r1.getline('please type:');
+  fs.writeFileSync('./data.txt', msg);
+  console.log('save data.txt to write:' + msg);
 }
-
 main();
